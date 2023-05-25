@@ -2,6 +2,7 @@ const express=require("express")
 require("dotenv").config()
 const colors=require("colors")
 const todoRoutes=require("./routes/TodoRoutes")
+const userRoutes=require("./routes/UserRoutes")
 const errorHandler = require("./middleware/errorHandler")
 const connectDB = require("./config/dbConnection")
 
@@ -10,6 +11,7 @@ const app=express()
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 app.use("/api/todos/",todoRoutes)
+app.use("/api/users/",userRoutes)
 app.use(errorHandler)
 
 

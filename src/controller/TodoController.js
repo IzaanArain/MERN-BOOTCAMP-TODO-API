@@ -15,7 +15,7 @@ const getAllTodos = asyncHandler(async (req, res) => {
 //@route POST /api/todos/
 //@access Private
 const createTodo = asyncHandler(async (req, res) => {
-  console.log(`the request body is :`, req.body);
+  // console.log(`the request body is :`, req.body);
   const { activityType, date, duration, description } = req.body;
   if (!activityType || !duration || !date || !description) {
     // res.status(400).json({message:"please add a text"})
