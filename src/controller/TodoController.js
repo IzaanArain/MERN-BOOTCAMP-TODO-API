@@ -6,7 +6,8 @@ const Todo = require("../model/TodoModel");
 //@access Private
 const getAllTodos = asyncHandler(async (req, res) => {
   // console.log(req.body)
-  const todos = await Todo.find();
+  // const todos = await Todo.find();
+  const todos = await Todo.find({user_id:req.user.id});
   res.status(200).json(todos);
   //   res.status(200).json({ message: "Get all todos" });
 });
@@ -22,6 +23,7 @@ const createTodo = asyncHandler(async (req, res) => {
     res.status(400);
     throw new Error("all field are mandatory");
   }
+  console.log(req.user.id)
   const todo = await Todo.create({
     activityType: activityType,
     date: date,
@@ -31,7 +33,8 @@ const createTodo = asyncHandler(async (req, res) => {
     lname:lname,
     contact:contact,
     email:email,
-    image:image
+    image:image,
+    user_id:req.user.id
   });
   res.status(200).json(todo);
   // res.status(200).json({ message: "create a todo" });

@@ -7,17 +7,18 @@ const {
   deleteTodo,
   patchTodo,
 } = require("../controller/TodoController");
+const { protect } = require("../middleware/authTokenMiddleware");
 
 const router = express.Router();
 
 router.route("/")
-.get(getAllTodos)
-.post(createTodo);
+.get(protect,getAllTodos)
+.post(protect,createTodo);
 
 router.route("/:id")
-.get(getTodo)
-.put(updateTodo)
-.delete(deleteTodo)
+.get(protect,getTodo)
+.put(protect,updateTodo)
+.delete(protect,deleteTodo)
 .patch(patchTodo);
 
 module.exports = router;
