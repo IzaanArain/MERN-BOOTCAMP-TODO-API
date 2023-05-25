@@ -36,7 +36,7 @@ const todoSchema=mongoose.Schema({
     },
     contact:{
         type:String,
-        required:[true,"please enter your email"],
+        required:[true,"please enter your contact"],
     },
     image:{
         type:String,

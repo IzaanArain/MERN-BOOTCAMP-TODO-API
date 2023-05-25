@@ -17,7 +17,7 @@ const getAllTodos = asyncHandler(async (req, res) => {
 const createTodo = asyncHandler(async (req, res) => {
   // console.log(`the request body is :`, req.body);
   const { activityType, date, duration, description,fname,lname,contact,email,image } = req.body;
-  if (!activityType || !duration || !date || !description) {
+  if (!activityType || !duration || !date || !description || !fname|| !lname|| !contact|| !email) {
     // res.status(400).json({message:"please add a text"})
     res.status(400);
     throw new Error("all field are mandatory");
