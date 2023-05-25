@@ -18,6 +18,13 @@ const userSchema=mongoose.Schema({
         type:String,
         required:[true,"please enter your password"]
     },
+    image:{
+        type:String,
+        default:" "
+    },
+    age:{
+        type:Number,
+    },
     contact:{
         type:String,
         default:" "

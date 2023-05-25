@@ -21,7 +21,27 @@ const todoSchema=mongoose.Schema({
     date:{
         type:String,
         required:[true,"please enter date"]
-    }
+    },
+    fname:{
+        type:String,
+        required:[true,"please enter your first name"]
+    },
+    lname:{
+        type:String,
+        required:[true,"please enter your last name"]
+    },
+    email:{
+        type:String,
+        required:[true,"please enter your email"],
+    },
+    contact:{
+        type:String,
+        required:[true,"please enter your email"],
+    },
+    image:{
+        type:String,
+        default:" "
+    },
 },
 {
     timestamps:true

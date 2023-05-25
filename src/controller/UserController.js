@@ -11,7 +11,7 @@ const registerUser = asyncHandler(async (req, res) => {
         lname,
         email,
         password,
-        contact,country,city}=req.body
+        contact,country,city,age,image}=req.body
     if(!fname || !lname|| !email|| !password){
         res.status(400)
         throw new Error("please enter all fields")
@@ -36,7 +36,9 @@ const registerUser = asyncHandler(async (req, res) => {
         email:email,
         contact:contact,
         country:country,
-        city:city
+        city:city,
+        age:age,
+        image:image
     })
     if(user){
         res.status(201).json(user)
@@ -49,8 +51,8 @@ const registerUser = asyncHandler(async (req, res) => {
         res.status(400)
         throw new Error("user data is not valid")
     }
-    console.log(`User created ${user}`);
-    res.status(200).json({ message: `please register user` });
+    // console.log(`User created ${user}`);
+    // res.status(200).json({ message: `please register user` });
   });
 
 //@desc Authenticate a new User

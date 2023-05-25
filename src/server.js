@@ -26,4 +26,5 @@ const PORT=process.env.PORT || 3000
 app.listen(PORT,()=>{
     console.log(`server running on http://localhost:${PORT}`)
     console.log(`server running on http://localhost:${PORT}/api/todos/`)
+    console.log(`server running on http://localhost:${PORT}/api/users/`)
 })
